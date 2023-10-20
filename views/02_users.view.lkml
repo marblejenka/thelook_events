@@ -1,5 +1,5 @@
 view: users {
-  sql_table_name: looker-private-demo.ecomm.users ;;
+  sql_table_name: bigquery-public-data.thelook_ecommerce.users ;;
   view_label: "Users"
   ## Demographics ##
 
@@ -193,7 +193,7 @@ view: users {
   dimension: history {
     label: "History"
     sql: ${TABLE}.id ;;
-    html: <a href="/explore/thelook_event/order_items?fields=order_items.detail*&f[users.id]={{ value }}">Order History</a>
+    html: <a href="/explore/thelook_events/order_items?fields=order_items.detail*&f[users.id]={{ value }}">Order History</a>
       ;;
   }
 
@@ -249,7 +249,7 @@ view: users {
 }
 
 # If necessary, uncomment the line below to include explore_source.
-# include: "thelook.model.lkml"
+# include: "thelook_events.model.lkml"
 
 view: first_table {
   derived_table: {
